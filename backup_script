@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -n "$1" ] && [ -n "$2" ]
+then
+mkdir $2
+find $1 -type f -name "*.cpp" -exec cp --parent {} "$2/" \;
+tar -cf "$2.tar" $2 
+rm -r $2
+echo "done"
+fi
